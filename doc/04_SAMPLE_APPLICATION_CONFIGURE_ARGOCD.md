@@ -88,4 +88,4 @@ curl -vv http://sample-app.localtest.me/echo
 # {"method":"GET","path":"/echo"}
 ```
 
-![ArgoCD Create Repo](img/argocd-create-repo.png)
+![ArgoCD Create App](img/argocd-create-app.png)
