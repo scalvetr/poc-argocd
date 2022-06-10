@@ -13,7 +13,7 @@ Init variables
 ```shell
 export GIT_REPOSITORY="https://github.com/scalvetr/poc-crossplane.git";
 export GITHUB_TOKEN="`cat credentials.json | jq -r '.git.token'`";
-export TARGET_NAMESPACE="sample-application"
+export TARGET_NAMESPACE="sample-app"
 echo "${GITHUB_TOKEN}"
 ```
 
@@ -62,7 +62,9 @@ argocd app create sample-app \
 --repo ${GIT_REPOSITORY} \
 --path sample-app-helm  \
 --dest-server https://kubernetes.default.svc \
---dest-namespace ${TARGET_NAMESPACE}
+--dest-namespace ${TARGET_NAMESPACE} \
+--sync-policy auto \
+--project default
 
 # same thing with kubectl
 cat <<EOF | kubectl apply -f -
@@ -72,12 +74,15 @@ metadata:
   name: sample-app
   namespace: argocd
 spec:
+  project: default
   destination:
     namespace: ${TARGET_NAMESPACE}
     server: https://kubernetes.default.svc
   source:
     path: sample-app-helm
     repoURL: ${GIT_REPOSITORY}
+  syncPolicy:
+    automated: {}
 EOF
 
 ```
