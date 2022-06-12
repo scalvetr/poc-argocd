@@ -20,11 +20,6 @@ PASSWORD: ${admin_password}
 """
 ```
 
-## Argo CD: Initial configuration
+## Deploy the service API
 
-```shell
-kubectl apply -f scripts/argocd-ssh-known-hosts-cm.yaml
-kubectl apply -f scripts/argocd-cm.yaml
-kubectl apply -f scripts/helm-repo-config.yaml
-```
-
+Follow the instructions [here](doc/05_DEPLOY_SERVICE_API.md)
