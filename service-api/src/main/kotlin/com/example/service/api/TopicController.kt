@@ -26,14 +26,14 @@ class TopicController(
     @ResponseStatus(HttpStatus.OK)
     suspend fun getTopic(
         @RequestHeader("x-tenant") tenant: String,
-        @RequestParam("topicName") topicName: String
+        @PathVariable("topicName") topicName: String
     ): Topic {
         return topicService.getTopic(tenant, topicName)
     }
 
     @DeleteMapping("/{topicName}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    suspend fun deleteTopic(@RequestHeader("x-tenant") tenant: String, @RequestParam("topicName") topicName: String) {
+    suspend fun deleteTopic(@RequestHeader("x-tenant") tenant: String, @PathVariable("topicName") topicName: String) {
         topicService.deleteTopic(tenant, topicName)
     }
 

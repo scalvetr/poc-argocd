@@ -65,5 +65,9 @@ class TopicService(
         if (!tenants.contains(tenant)) {
             throw ServiceException("Invalid tenant $tenant")
         }
+
+        if (database[tenant] == null) {
+            database[tenant] = mutableMapOf()
+        }
     }
 }
