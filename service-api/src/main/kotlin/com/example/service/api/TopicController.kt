@@ -19,7 +19,6 @@ class TopicController(
     @PutMapping("")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     suspend fun updateTopic(@RequestHeader("x-tenant") tenant: String, @RequestBody topic: Topic) {
-
         topicService.updateTopic(tenant, topic)
     }
 
