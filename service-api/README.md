@@ -8,7 +8,8 @@
 
 curl http://localhost:8080/actuator/health
 
-curl http://localhost:8080/echo
+
+http://localhost:8080/actuator/swagger-ui.html
 ```
 
 ## Deploy lo local registry

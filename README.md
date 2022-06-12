@@ -23,3 +23,7 @@ PASSWORD: ${admin_password}
 ## Deploy the service API
 
 Follow the instructions [here](doc/05_DEPLOY_SERVICE_API.md)
+
+See the API here
+
+https://service-api.localtest.me/actuator/swagger-ui.html
