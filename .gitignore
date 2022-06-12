@@ -23,6 +23,7 @@
 hs_err_pid*
 /credentials.json
 /provider-pizza/
+/provider-ebs/
 /.idea/
 /poc-crossplane.iml
 /kubectl-crossplane
