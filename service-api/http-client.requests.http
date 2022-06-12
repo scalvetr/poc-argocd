@@ -1,0 +1,16 @@
+GET {{base-url}}/v1/topics
+Accept: application/json
+x-tenant: invalid_tenant
+
+> {%
+    client.test("Request executed with client error", function() {
+        client.assert(response.status === 422, "Response status is not 422 (" + response.status + ")");
+    });
+    client.test("Request body is correct", function() {
+        client.assert(response.body.message === "Invalid tenant invalid_tenant", "Response body is not \"Invalid tenant invalid_tenant\"");
+    });
+    client.test("Response content-type is json", function() {
+        var type = response.contentType.mimeType;
+        client.assert(type === "application/json", "Expected 'application/json' but received '" + type + "'");
+    });
+%}
