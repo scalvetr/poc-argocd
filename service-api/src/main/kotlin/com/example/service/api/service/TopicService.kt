@@ -23,6 +23,9 @@ class TopicService(
     suspend fun updateTopic(tenant: String, topic: Topic) {
         checkTenant(tenant)
         checkTopic(topic)
+        if (database[tenant]?.containsKey(topic.name) == false)
+            throw NotFoundException("Topic with name ${topic.name} doesn't exist")
+
         database[tenant]?.put(topic.name, topic)
     }
 

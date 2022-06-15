@@ -16,9 +16,13 @@ class TopicController(
         topicService.createTopic(tenant, topic)
     }
 
-    @PutMapping("")
+    @PutMapping("/{topicName}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    suspend fun updateTopic(@RequestHeader("x-tenant") tenant: String, @RequestBody topic: Topic) {
+    suspend fun updateTopic(
+        @RequestHeader("x-tenant") tenant: String,
+        @PathVariable("topicName") topicName: String,
+        @RequestBody topic: Topic
+    ) {
         topicService.updateTopic(tenant, topic)
     }
 
