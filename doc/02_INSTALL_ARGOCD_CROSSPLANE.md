@@ -66,3 +66,9 @@ helm list -n crossplane-system
 
 kubectl get all -n crossplane-system
 ```
+
+Insatall the crossplane CLI
+
+```shell
+curl -sL https://raw.githubusercontent.com/crossplane/crossplane/master/install.sh | sh
+```
