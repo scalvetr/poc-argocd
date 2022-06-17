@@ -23,6 +23,5 @@
 hs_err_pid*
 /credentials.json
 /.idea/
-/poc-crossplane.iml
-/kubectl-crossplane
+/poc-argocd.iml
 /cmds.md

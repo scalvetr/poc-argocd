@@ -28,7 +28,7 @@ fi
 
 ## Create the cluster
 ```shell
-export CLUSTER_NAME="poc-crossplane";
+export CLUSTER_NAME="poc-argocd";
 cat <<EOF | kind create cluster --name ${CLUSTER_NAME} --image kindest/node:v1.21.1 --config=-
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -85,6 +85,6 @@ Cluster deletion
 ```shell
 kind delete cluster --name=${CLUSTER_NAME}
 
-# check there's no "poc-crossplane"-control-plane" container
+# check there's no "poc-argocd"-control-plane" container
 docker container ls
 ```

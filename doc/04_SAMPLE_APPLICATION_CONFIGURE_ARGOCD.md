@@ -11,7 +11,7 @@ argocd login argocd.localtest.me
 
 Init variables
 ```shell
-export GIT_REPOSITORY="https://github.com/scalvetr/poc-crossplane.git";
+export GIT_REPOSITORY="https://github.com/scalvetr/poc-argocd.git";
 export GITHUB_TOKEN="`cat credentials.json | jq -r '.git.token'`";
 export TARGET_NAMESPACE="sample-app"
 echo "${GITHUB_TOKEN}"
