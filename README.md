@@ -3,7 +3,7 @@
 ## INSTALLATION
 
 * [Install K8S local cluster with KinD](doc/01_K8S_LOCAL_CLUSTER_KIND.md)
-* [Install ArgoCD and Crossplane](doc/02_INSTALL_ARGOCD_CROSSPLANE.md)
+* [Install ArgoCD](doc/02_INSTALL_ARGOCD.md)
 * [Deploy Sample Application to Local Registry](doc/03_SAMPLE_APPLICATION_BUILD_LOCAL_REGISTRY.md)
 * [Configure Sample Application in ArgoCD](doc/04_SAMPLE_APPLICATION_CONFIGURE_ARGOCD.md)
 
